@@ -2,17 +2,17 @@ import firebase from 'firebase';
 
 try {
   var config = {
-      apiKey: "AIzaSyDe1-3q9L7_kbYknbEVX5qd-j0vnsEGQkw",
-      authDomain: "mead-todo-app-6a908.firebaseapp.com",
-      databaseURL: "https://mead-todo-app-6a908.firebaseio.com",
-      storageBucket: "mead-todo-app-6a908.appspot.com",
-      messagingSenderId: "432385633575"
-    };
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET,
+  };
 
   firebase.initializeApp(config);
 } catch (e) {
 
 }
 
+export var githubProvider = new firebase.auth.GithubAuthProvider();
 export var firebaseRef = firebase.database().ref();
 export default firebase;
